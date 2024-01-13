@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 django = {extras = ["all"], version = "^5.0"}
+djangorestframework = "^3.14.0"
+djoser = {extras = ["all"], version = "^2.2.2"}
 
 
 [build-system]
