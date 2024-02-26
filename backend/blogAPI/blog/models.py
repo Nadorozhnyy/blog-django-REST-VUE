@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from users.models import UserProfile as Profile
+from users.models import CustomUser as Profile
 
 
 class BlogPost(models.Model):
