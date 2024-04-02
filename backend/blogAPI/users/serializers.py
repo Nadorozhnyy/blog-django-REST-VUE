@@ -11,7 +11,7 @@ def add_user_to_group(user):
     my_group.user_set.add(user)
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ("id", "username", "email")
@@ -27,3 +27,9 @@ class CustomUserCreateMixin(UserCreateSerializer):
                 user.save(update_fields=["is_active"])
         add_user_to_group(user)
         return user
+
+
+class UserGroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = ("id", "name")
