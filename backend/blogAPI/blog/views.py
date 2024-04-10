@@ -19,7 +19,7 @@ class BlogPostPagination(PageNumberPagination):
 
 
 class BlogPostViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, GenericViewSet):
-    queryset = BlogPost.objects.all()
+    queryset = BlogPost.objects.all().order_by('-created_date')
     serializer_class = BlogPostSerializer
     permission_classes = (IsAdminOrReadOnly,)
     pagination_class = BlogPostPagination
